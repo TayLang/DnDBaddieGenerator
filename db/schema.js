@@ -105,8 +105,9 @@ const usersSchema = new mongoose.Schema({
  		attacks: {type: Array},
  		specialAbilities: {type: String},
  		equipment: {type: Array},
-
-
+ 		motivation: {type: String},
+ 		fears: {type: String},
+ 		special: {type: String}
  })
 
 module.exports = {

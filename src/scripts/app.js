@@ -2,10 +2,37 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Backbone from 'backbone'
 import init from './init'
+import WelcomeView from './views/welcome.js'
+import MainView from './views/mainview.js'
 
 
 const app = function() {
-  document.querySelector('.container').innerHTML = `<h1>DnDBaddieGenerator</h1>`
+	var MonstRouter = Backbone.Router.extend({
+		routes: {
+			"welcome" : "handleWelcome",
+			"main" : "handleMain",
+			"list" : "handleList",
+			"*splat" : "redirect"
+		},
+
+		handleWelcome: function(){
+			ReactDOM.render(<WelcomeView />, document.querySelector('.container'))
+		},
+
+		handleMain: function(){
+			ReactDOM.render(<MainView />, document.querySelector('.container'))
+		},
+
+		handleList: function(){
+			ReactDOM.render(<ListView />, document.querySelector('.container'))
+		},
+
+		redirect: function(){
+			location.hash = "welcome"
+		}
+	})
+	new MonstRouter
+	Backbone.history.start()
 }
 
 // x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..

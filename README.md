@@ -25,6 +25,6 @@ TECH USED
 
 This is a MERN stack app-MongoDB, Express.js, React.js, and Node.js. 
 
-Thanks to- Hank Holcomb, Meghan B., Adam Ray, Zachary Olson
+Thanks to- Hank Holcomb, Meghan B., Adam Ray, Zachary Olson, JWO
 
 SPECIAL THANKS TO- Earl Renken II

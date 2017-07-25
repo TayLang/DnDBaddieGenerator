@@ -16,6 +16,7 @@ const usersSchema = new mongoose.Schema({
 })
 
  const monsterSchema = new mongoose.Schema({
+ 		name: { type: String, required: true, unique: true}
  		size: { type: String, enum: ['Tiny', 'Small', 'Medium', 'Large', 'Huge', 'Gargantuan'], required: true },
  		type: { type: String, enum: ['Aberration', 'Beast', 'Celestial', 'Construct', 'Dragon', 'Elemental', 'Fey', 'Fiend', 'Giant', 'Humanoid', 'Monstrosity', 'Ooze', 'Plants', 'Undead'], required: true },
  		tag: { type: String },
@@ -111,5 +112,6 @@ const usersSchema = new mongoose.Schema({
  })
 
 module.exports = {
-  User: mongoose.model('User', usersSchema)
+  User: mongoose.model('User', usersSchema),
+  Monster: mongoose.model('monster', monsterSchema)
 }

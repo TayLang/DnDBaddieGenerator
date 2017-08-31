@@ -61,36 +61,48 @@ class MainView extends React.Component {
 							type='number'
 							name='str'
 							placeholder='Enter Str Score'
+							min='1'
+							max='30'
 						/>
 						<input 
 							className='abDex'
 							type='number'
 							name='dex'
 							placeholder='Enter Dex Score'
+							min='1'
+							max='30'
 						/>
 						<input 
 							className='abCon'
 							type='number'
 							name='con'
 							placeholder='Enter Con Score'
+							min='1'
+							max='30'
 						/>
 						<input 
 							className='abInt'
 							type='number'
 							name='int'
 							placeholder='Enter Int Score'
+							min='1'
+							max='30'
 						/>
 						<input 
 							className='abWis'
 							type='number'
 							name='wis'
 							placeholder='Enter Wis Score'
+							min='1'
+							max='30'
 						/>
 						<input 
 							className='abCha'
 							type='number'
 							name='cha'
 							placeholder='Enter Cha Score'
+							min='1'
+							max='30'
 						/>
 					</div>
 					<button className="monstSubmit" type="submit">submit</button>

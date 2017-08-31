@@ -16,18 +16,18 @@ const usersSchema = new mongoose.Schema({
 })
 
  const monsterSchema = new mongoose.Schema({
- 		name: { type: String, required: true, unique: true}
+ 		name: { type: String, required: true, unique: true},
  		size: { type: String, enum: ['Tiny', 'Small', 'Medium', 'Large', 'Huge', 'Gargantuan'], required: true },
  		type: { type: String, enum: ['Aberration', 'Beast', 'Celestial', 'Construct', 'Dragon', 'Elemental', 'Fey', 'Fiend', 'Giant', 'Humanoid', 'Monstrosity', 'Ooze', 'Plants', 'Undead'], required: true },
  		tag: { type: String },
  		alignment: { type: String, enum: ['Lawful Good', 'Neutral Good', 'Chaotic Good', 'Lawful Neutral', 'True Neutral', 'Chaotic Neutral', 'Lawful Evil', 'Neutral Evil', 'Chaotic Evil', 'Unaligned'], required: true },
  		abilityScore: { 
- 			Strength : { type: Number, min: 1, max: 20, required: true },
- 			Dexterity : { type: Number, min: 1, max: 20, required: true },
- 			Constitution : { type: Number, min: 1, max: 20, required: true},
- 			Intelligence : { type: Number, min: 1, max: 20, required: true},
- 			Wisdom : { type: Number, min: 1, max: 20, required: true},
- 			Charisma : { type: Number, min: 1, max: 20, required: true}
+ 			Strength : { type: Number, min: 1, max: 30, required: true },
+ 			Dexterity : { type: Number, min: 1, max: 30, required: true },
+ 			Constitution : { type: Number, min: 1, max: 30, required: true},
+ 			Intelligence : { type: Number, min: 1, max: 30, required: true},
+ 			Wisdom : { type: Number, min: 1, max: 30, required: true},
+ 			Charisma : { type: Number, min: 1, max: 30, required: true}
  		},
  		mvmtModes: {
  			canWalk : { type: Boolean, default: true},
@@ -108,7 +108,8 @@ const usersSchema = new mongoose.Schema({
  		equipment: {type: Array},
  		motivation: {type: String},
  		fears: {type: String},
- 		special: {type: String}
+ 		special: {type: String},
+ 		createdAt: {type: Date, default: Date.now}
  })
 
 module.exports = {

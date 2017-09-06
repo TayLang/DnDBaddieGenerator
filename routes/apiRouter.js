@@ -3,7 +3,7 @@ const apiRouter = Router()
 let helpers = require('../config/helpers.js')
 
 let User = require('../db/schema.js').User
-let Monster = require('../db/schema.js').Monster
+const Monster = require('../db/schema.js').Monster
   
   apiRouter
     .get('/users', function(req, res){
@@ -48,7 +48,7 @@ let Monster = require('../db/schema.js').Monster
     // Routes for a Model(resource) should have this structure
   apiRouter
     .get('/monsters', function(req, res){
-      monster.find(req.query, function(err, rec){
+      Monster.find(req.query, function(err, rec){
         if (err) {
           return res.status(400).json(err)
         }
@@ -57,7 +57,7 @@ let Monster = require('../db/schema.js').Monster
     })
 
     .post('/monsters', function(request, response){
-      var newMonster = new monster(request.body)
+      var newMonster = new Monster(request.body)
       newMonster.save(function(error, record){
         if (error) {
           return response.status(400).json(error)

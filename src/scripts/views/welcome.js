@@ -10,7 +10,7 @@ class WelcomeView extends React.Component {
 		return (
 			<div className = 'welcome'>
 				<h1>D&D 5e Baddie Generator</h1>
-				<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+				<p>Welcome to the Baddie Generator! The idea behind this site is to allow DMs to have a personal repository of custom-created bad guys, in case they've exhausted the available pre-made monsters in the books. As implied above, this is for 5th Edition, and as such, 4th and earlier editions may not be totally compatible with this generator. At the moment, the application is still in pre-alpha phase, and I'm trying to phase in features one at a time. I have many, many great plans for this application, and I hope to roll them all out as soon as possible. Thanks so much for stopping by! -Taylor Lang, Developer</p>
 				<button className="goToMain" onClick={function() {location.hash = 'main'}}>Let's Get Started!</button>
 			</div>
 

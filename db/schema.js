@@ -101,7 +101,7 @@ const usersSchema = new mongoose.Schema({
  			hasTelepathy: {type: Boolean, default: false}
  		},
  		environment: {type: String},
- 		challengeRating: {type: Number, required: true},
+ 		challengeRating: {type: Number},
  		reactions: {type: String},
  		attacks: {type: Array},
  		specialAbilities: {type: String},
@@ -114,5 +114,5 @@ const usersSchema = new mongoose.Schema({
 
 module.exports = {
   User: mongoose.model('User', usersSchema),
-  Monster: mongoose.model('monster', monsterSchema)
+  Monster: mongoose.model('Monster', monsterSchema)
 }

@@ -1,9 +1,32 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-// import ACTIONS from '../ACTIONS.js'
-// import STORE from '../STORE.js'
+import ACTIONS from '../actions.js'
+import STORE from '../store.js'
 
 class MainView extends React.Component {
+	_handleSubmit(eventObj){
+		eventObj.preventDefault()
+		// console.log(eventObj.target)
+		var formEl = eventObj.target
+		var monstData = {
+			name: formEl.monstName.value,
+			size: formEl.sizeList.value,
+			type: formEl.typeList.value,
+			alignment: formEl.alignList.value,
+			abilityScore: {
+				Strength: formEl.str.value,
+				Dexterity: formEl.dex.value,
+				Constitution: formEl.con.value,
+				Intelligence: formEl.int.value,
+				Wisdom: formEl.wis.value,
+				Charisma: formEl.cha.value
+			}
+		}
+		console.log(monstData)
+		formEl.reset()
+		ACTIONS.addMonster(monstData)
+	}
+
 	constructor(props) {
 		super(props)
 	}
@@ -19,7 +42,7 @@ class MainView extends React.Component {
 						name='monstName'
 						placeholder="Enter name of Monster"
 						 />
-					<select name="sizeList" form="sizeForm">
+					<select name="sizeList">
 						<option value='Tiny'>Tiny</option>
 						<option value='Small'>Small</option>
 						<option value='Medium'>Medium</option>
@@ -27,7 +50,7 @@ class MainView extends React.Component {
 						<option value='Huge'>Huge</option>
 						<option value='Gargantuan'>Gargantuan</option>
 					</select>
-					<select name='typeList' form='typeForm'>
+					<select name='typeList'>
 						<option value='Aberration'>Aberration</option>
 						<option value='Beast'>Beast</option>
 						<option value='Celestial'>Celestial</option>
@@ -43,7 +66,7 @@ class MainView extends React.Component {
 						<option value='Plants'>Plant</option>
 						<option value='Undead'>Undead</option>
 					</select>
-					<select name='alignList' form='alignForm'>
+					<select name='alignList'>
 						<option value='Lawful Good'>Lawful Good</option>
 						<option value='Neutral Good'>Neutral Good</option>
 						<option value='Chaotic Good'>Chaotic Good</option>

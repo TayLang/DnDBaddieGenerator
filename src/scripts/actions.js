@@ -10,7 +10,7 @@ const ACTIONS = {
 				function(res) {
 					alert('Your monster is successfully saved! Go make another, champ!')
 					//ACTIONS.fetchMonsters()
-					location.hash = 'welcome'
+					location.hash = 'main'
 				},
 				function(err) {
 					alert('Something went wrong and your monster wasn\'t saved!')

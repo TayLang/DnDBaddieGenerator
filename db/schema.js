@@ -22,12 +22,12 @@ const usersSchema = new mongoose.Schema({
  		tag: { type: String },
  		alignment: { type: String, enum: ['Lawful Good', 'Neutral Good', 'Chaotic Good', 'Lawful Neutral', 'True Neutral', 'Chaotic Neutral', 'Lawful Evil', 'Neutral Evil', 'Chaotic Evil', 'Unaligned'], required: true },
  		abilityScore: { 
- 			Strength : { type: Number, min: 1, max: 30, required: true },
- 			Dexterity : { type: Number, min: 1, max: 30, required: true },
- 			Constitution : { type: Number, min: 1, max: 30, required: true},
- 			Intelligence : { type: Number, min: 1, max: 30, required: true},
- 			Wisdom : { type: Number, min: 1, max: 30, required: true},
- 			Charisma : { type: Number, min: 1, max: 30, required: true}
+ 			Strength : { type: Number, min: 1, max: 30, required: true, default: 10 },
+ 			Dexterity : { type: Number, min: 1, max: 30, required: true, default: 10},
+ 			Constitution : { type: Number, min: 1, max: 30, required: true, default: 10},
+ 			Intelligence : { type: Number, min: 1, max: 30, required: true, default: 10},
+ 			Wisdom : { type: Number, min: 1, max: 30, required: true, default: 10},
+ 			Charisma : { type: Number, min: 1, max: 30, required: true, default: 10}
  		},
  		mvmtModes: {
  			canWalk : { type: Boolean, default: true},
@@ -93,10 +93,10 @@ const usersSchema = new mongoose.Schema({
  		},
  		languages: {
  			canSpeak: {
- 				type: String, enum: ['abyssal', 'aquan', 'auran', 'celestial', 'common', 'deepSpeech', 'draconic', 'druidic', 'dwarvish', 'elvish', 'giant', 'gnomish', 'goblin', 'gnoll', 'halfling', 'ignan', 'infernal', 'orc', 'primordial', 'sylvan', 'terran', 'undercommon', 'none']
+ 				type: Array, enum: ['abyssal', 'aquan', 'auran', 'celestial', 'common', 'deepSpeech', 'draconic', 'druidic', 'dwarvish', 'elvish', 'giant', 'gnomish', 'goblin', 'gnoll', 'halfling', 'ignan', 'infernal', 'orc', 'primordial', 'sylvan', 'terran', 'undercommon', 'none']
  			},
  			canComprehend: {
- 				type: String, enum: ['abyssal', 'aquan', 'auran', 'celestial', 'common', 'deepSpeech', 'draconic', 'druidic', 'dwarvish', 'elvish', 'giant', 'gnomish', 'goblin', 'gnoll', 'halfling', 'ignan', 'infernal', 'orc', 'primordial', 'sylvan', 'terran', 'undercommon', 'none']
+ 				type: Array, enum: ['abyssal', 'aquan', 'auran', 'celestial', 'common', 'deepSpeech', 'draconic', 'druidic', 'dwarvish', 'elvish', 'giant', 'gnomish', 'goblin', 'gnoll', 'halfling', 'ignan', 'infernal', 'orc', 'primordial', 'sylvan', 'terran', 'undercommon', 'none']
  			},
  			hasTelepathy: {type: Boolean, default: false}
  		},
@@ -109,6 +109,7 @@ const usersSchema = new mongoose.Schema({
  		motivation: {type: String},
  		fears: {type: String},
  		special: {type: String},
+ 		background: {type: String},
  		createdAt: {type: Date, default: Date.now}
  })
 
